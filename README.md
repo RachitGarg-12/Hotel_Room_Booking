@@ -21,6 +21,6 @@ Admin Panel functionalities
 
 
 The frontEnd is built using RectJs and the backend is built using ExpressJs and Nodejs.
-I have MongoDB Atlas Cloud facility for storing the data .
+I have used MongoDB Atlas Cloud facility for storing the data .
 
 
