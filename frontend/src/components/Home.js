@@ -34,8 +34,8 @@ export default function Home(props) {
   return (
       <>
       <div className="container-fluid" style={{marginTop:"70px"}}>
-      <div className="d-flex justify-content-between">
-        <div className="d-flex justify-content-start">
+      <div className="d-flex justify-content-between" >
+        <div className="d-flex justify-content-start" >
             {/* <Link className="btn btn-success mb-3 my-" to="/addUser">Room Booking</Link> */}
             <Button className="btn btn-success mb-3 my-" onClick={handleShowModal}>Room Booking</Button>
             <BookingTime setBookingTime={setBookingTime}/>

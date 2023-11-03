@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './components/Navbar';
+import TopBar from './components/Topbar';
 // import AddUser from './components/AddUser';
 import UserState from './context/UserState';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
@@ -23,7 +23,7 @@ function App() {
     <>
       <UserState>
         <BrowserRouter>
-          <Navbar/>
+          <TopBar />
           <Alert alert={alert}/>
           <Routes>
             <Route exact path="/" element={<Home showAlert={showAlert}/>}/>

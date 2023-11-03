@@ -195,8 +195,8 @@ export default function Table(props) {
         </div>
     {/* Edit User End */}
 
-        <table className="table table-hover text-center">
-                <thead className="table-dark">
+        <table className="table table-hover text-center" >
+                <thead className="table-dark" >
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Email</th>
