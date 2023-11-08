@@ -42,7 +42,8 @@ router.post("/", async (req, res) => {
     });
 
     if (alreadyexistsuser.length!==0) {
-      return res.status(409).json({
+      return res.status(200).json({
+        success:false,
         message:
           "This room is already booked.",
       });
