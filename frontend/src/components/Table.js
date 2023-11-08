@@ -1,11 +1,10 @@
 import {useContext,useEffect,useRef,useState} from 'react';
 import UserContext from'../context/userContext';
 import TableItem from './TableItem';
-
 export default function Table(props) {
     const context = useContext(UserContext);
     const {users,getUsers,editUser,deleteUser} = context;
-    const [user,setUser]=useState({id:"",eEmail: "",eRoomType:"",eRoomNumber:"",eStartTime:"",eEndTime:""});
+    const [user,setUser]=useState({id:"",eEmail: "",eRoomType:"null",eRoomNumber:"",eStartTime:"",eEndTime:""});
     const [delUser,setDelUser]=useState({id:"",roomType:"",delStartTime:"",delEndTime:""})
     const {selectedOption,inputValue,booking,filterStartTime,filterEndTime}=props;
     useEffect(()=>{
