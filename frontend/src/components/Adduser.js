@@ -1,7 +1,8 @@
 import { useState, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import userContext from '../context/userContext';
-import {useNavigate } from 'react-router-dom';
+import {useNavigate , Link} from 'react-router-dom';
+import Alert from './Alert';
 
 export default function Adduser(props) {
   const showModal=props.showModal
@@ -24,6 +25,7 @@ export default function Adduser(props) {
   const callback = (flag) => {
     if (!flag) {
       props.showAlert("This room is already booked for the given slot.", "danger");
+      // alert("This room is already booked for the given slot.", "danger")
     }
     else {
       let startTime = Date.parse(user.startTime);
@@ -39,12 +41,14 @@ export default function Adduser(props) {
         price = hoursDiff * 50;
       }
       price = Math.round(price);
-      props.showAlert(`Successfully booked. Bill is ₹ ${price}`, "success");
+      // alert(`Successfully booked. Bill is ₹ ${price}`, "success");
+      props.showAlert(`Successfully booked. Bill is ₹ ${price}`, "success")
       navigate('/');
     }
     setUser({ email: '', roomType: '',roomNumber: '', startTime: '', endTime: '' });
   }
   const onClickHandler = async (e) => {
+    // console.log(e.target);
     addUser(user.email, user.roomType, user.roomNumber, user.startTime, user.endTime, callback);
     handleClose();
   };
@@ -111,12 +115,10 @@ export default function Adduser(props) {
       </div>
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="success" disabled={user.email.length === 0 || user.roomNumber.length === 0 || user.roomType.length === 0 || user.startTime.length === 0 || user.endTime.length === 0 || Date.parse(user.startTime) > Date.parse(user.endTime)} onClick={onClickHandler}>
-        Save
-      </Button>
-      <Button variant="danger" onClick={handleClose}>
-        Cancel
-      </Button>
+    <div className="d-flex justify-content-center my-2">
+            <button type="button" disabled={user.email.length === 0 || user.roomNumber.length === 0 || user.roomType.length === 0 || user.startTime.length === 0 || user.endTime.length === 0 || Date.parse(user.startTime)>Date.parse(user.endTime)} className="btn btn-success" name="submit" onClick={onClickHandler}>Save</button>
+                    <Link className="btn btn-danger mx-2" to="/">Cancel</Link>
+                </div>
     </Modal.Footer>
   </Modal>
   );

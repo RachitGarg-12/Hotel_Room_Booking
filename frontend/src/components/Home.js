@@ -37,7 +37,7 @@ export default function Home(props) {
       <div className="d-flex justify-content-between" >
         <div className="d-flex justify-content-start" >
             {/* <Link className="btn btn-success mb-3 my-" to="/addUser">Room Booking</Link> */}
-            <Button className="btn btn-success mb-3 my-" onClick={handleShowModal}>Room Booking</Button>
+            <Button className="btn btn-success mb-3 my-" onClick={handleShowModal} showAlert={props.showAlert} >Room Booking</Button>
             <BookingTime setBookingTime={setBookingTime}/>
         </div>
         <TimeFilter setFilterBookingTime={setFilterBookingTime}/>
@@ -45,7 +45,7 @@ export default function Home(props) {
       </div>
       </div>
       <Table selectedOption={selectedOption} inputValue={inputValue} showAlert={props.showAlert} booking={booking} filterStartTime={filterStartTime} filterEndTime={filterEndTime}/>
-       {showModal? <Adduser showModal={showModal} handleClose={handleClose}/>:""}
+       {showModal? <Adduser showAlert={props.showAlert} showModal={showModal} handleClose={handleClose}/>:""}
 
 
 

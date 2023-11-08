@@ -31,7 +31,9 @@ const UserState=(props)=>{
                 startTime,
                 endTime})
         });
-        if(response.status===409){
+
+        console.log(response);
+        if(response.status===200){
             callback(false);
         }
         else{
